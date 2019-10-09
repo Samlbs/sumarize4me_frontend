@@ -3,19 +3,23 @@ import axios from 'axios';
 
 import './style.css';
 
-export default class FileList extends Component {
-  state = {
-    status: 'testeStatus',
-    fileName: 'testeName'
-  }
+const initialState = {
+  status: 'testeStatus',
+  fileName: 'fileNameTeste'
+}
 
+export default class FileList extends Component {
+  state = {...initialState};
+
+  
   getFileStatus = () => {
     console.log("testando a setInterval")
     axios.get("https://api.github.com/users/samlbs")
-    .then(function (response) {
+    .then((response) => {
       // handle success
-      console.log(response.data.id);
-      this.setState({status: response.data.id})
+      console.log(response.data.name);
+      this.setState({status: response.data.name});
+      //alterar o status do state, mas tá dando problema
     })
     .catch(function (error) {
       // handle error
@@ -23,11 +27,16 @@ export default class FileList extends Component {
     })
     .finally(function () {
       // always executed
+      
     });
   }
 
   async componentDidMount() {
-    setInterval(() => this.getFileStatus(), 5000);
+    var interval = setInterval(this.getFileStatus, 5000);
+    if (this.state.status === 'ok') {
+      clearInterval(interval);
+      //Quando eu receber ok, eu faço uma requisição para receber o resumo
+    }
   }
   
   render() {
