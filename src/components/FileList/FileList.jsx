@@ -12,11 +12,13 @@ export default class FileList extends Component {
   state = {...initialState};
 
   getAllFiles = () => {
-    axios.get("https://api.github.com/users/samlbs")
+    axios.get("")
     .then((response) => {
       // handle success
-      const uploadFiles = response.data.summaries;
-      this.setState({uploadFiles});
+      
+      //Descomentar quando a api node estiver pronta
+      //const uploadFiles = response.data.summaries;
+      //this.setState({uploadFiles});
     })
     .catch(function (error) {
       // handle error
@@ -29,26 +31,9 @@ export default class FileList extends Component {
   }
 
   async componentDidMount() {
-    var interval = setInterval(this.getAllFiles, 5000);
-    if (this.state.status === 'Complete') {
-      clearInterval(interval);
-      axios.get("https://api.github.com/users/samlbs")
-      .then((response) => {
-        // handle success
-        console.log(response);
-        const uploadFiles = response.summaries;
-        this.setState({uploadFiles});
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      })
-      .finally(function () {
-        // always executed
-      });
-    }
+    this.getAllFiles();
   }
-  
+
   render() {
     return (
       <div>

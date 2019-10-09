@@ -9,9 +9,12 @@ class App extends Component {
     e.preventDefault();
     const selectedFile = document.getElementById('file').files[0];
     const title = e.target.elements.title.value;
+    const language = e.target.elements.language.value;
+    console.log(language);
 
-    axios.post('/posts', {
+    axios.post("", {
       title: title,
+      language: language,
       file: selectedFile
     })
     .then((response) => {

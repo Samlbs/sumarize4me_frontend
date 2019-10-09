@@ -15,6 +15,7 @@ export default class components extends Component {
     state = {...initialState}
 
     constructor(props) {
+        super(props)
         this.setState({id: props.uploadFiles.id, 
                     title: props.uploadFiles.title, 
                     content: props.uploadFiles.content,
@@ -43,7 +44,7 @@ export default class components extends Component {
         var interval = setInterval(this.getAllFiles, 5000);
         if (this.state.status === 'Complete') {
             clearInterval(interval);
-            axios.get("https://api.github.com/users/samlbs")
+            axios.get("")
             .then((response) => {
                 // handle success
                 console.log(response);
