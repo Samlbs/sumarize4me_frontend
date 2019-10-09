@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Resumo from '../Resumo/Resumo';
 
 import './style.css';
 
 const initialState = {
-  status: 'testeStatus',
-  fileName: 'fileNameTeste'
+  uploadFiles: []
 }
 
 export default class FileList extends Component {
   state = {...initialState};
 
-  
-  getFileStatus = () => {
-    console.log("testando a setInterval")
+  getAllFiles = () => {
     axios.get("https://api.github.com/users/samlbs")
     .then((response) => {
       // handle success
-      console.log(response.data.name);
-      this.setState({status: response.data.name});
-      //alterar o status do state, mas tá dando problema
+      const uploadFiles = response.data.summaries;
+      this.setState({uploadFiles});
     })
     .catch(function (error) {
       // handle error
@@ -32,25 +29,39 @@ export default class FileList extends Component {
   }
 
   async componentDidMount() {
-    var interval = setInterval(this.getFileStatus, 5000);
-    if (this.state.status === 'ok') {
+    var interval = setInterval(this.getAllFiles, 5000);
+    if (this.state.status === 'Complete') {
       clearInterval(interval);
-      //Quando eu receber ok, eu faço uma requisição para receber o resumo
+      axios.get("https://api.github.com/users/samlbs")
+      .then((response) => {
+        // handle success
+        console.log(response);
+        const uploadFiles = response.summaries;
+        this.setState({uploadFiles});
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
     }
   }
   
   render() {
     return (
-      <table>
-      <tr>
-        <th>FileName</th>
-        <th>Status</th>
-      </tr>
-      <tr>
-        <td>{this.state.fileName}</td>
-        <td><button>{this.state.status}</button></td>
-      </tr>
-    </table>
+      <div>
+      <hr></hr>
+      <h1>Files Uploaded</h1>
+      <div className="content">
+        <table>
+        {this.state.uploadFiles.map(file => (
+          <tr><Resumo uploadFiles={file}></Resumo></tr>
+        ))}
+        </table>
+      </div>
+    </div>
     );
   }
 }
