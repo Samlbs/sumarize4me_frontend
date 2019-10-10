@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import UploadForm from './components/UploadForm/UploadForm';
 import FileList from './components/FileList/FileList';
 import axios from 'axios';
+import "./style.css"
+import logo from "./images/Sunmarize-Branco.png";
 
 class App extends Component {
 
@@ -27,9 +29,27 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <UploadForm getFormData={this.getFormData}></UploadForm>
-        <FileList></FileList>
+      <div className="container">
+        <div className="col-center-1">
+			    <div className="contentTop">
+				    <div className="logo">
+              <img src={logo} alt="Logo do sunmarize for me "/>
+				    </div>
+				    <div className="previewTitle">
+              <hr></hr>
+              <h4>O que podemos traduzir para você hoje?</h4>	
+              <h4>Apenas nos diga o arquivo</h4>	
+				    </div>
+            <div className="formUpload">
+              <UploadForm getFormData={this.getFormData}></UploadForm>
+            </div> 
+          </div>          
+        </div>
+        <div className="col-center-2 bgwhite">
+          <div className="contentTable">
+            <FileList></FileList>
+          </div>
+        </div>
       </div>
     );
   }

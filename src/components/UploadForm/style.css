@@ -1,0 +1,111 @@
+/*Muda a cor do placeholder*/
+::-webkit-input-placeholder {
+    color: rgb(240, 240, 240);
+}
+
+input{
+    border: solid 1px white;
+    border-radius: 100px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;    
+    color: white;
+    background-color:transparent;
+    outline: none;
+}
+
+.inputTitle{
+    width: 95%;
+    height: 45px;
+    padding-left: 20px;
+    transition: 0.5s;
+}
+
+.inputTitle:hover{
+    color: black;  
+    background-color: white;
+    transform: scale(1.05);
+}
+
+.inputFile{
+    width: 60%;
+    height: 45px;
+    margin-top: 10px; 
+    padding: 3px 10px 3px 3px;
+    font-size: 14px;
+
+    transition: 0.5s;
+}
+
+.inputFile:hover{
+    border: solid 1px white;
+    color: black;  
+    background-color: white;
+    transform: scale(1.05);
+}
+
+/*Necessario para modificar o botão do upload individualmente*/
+.inputFile::-webkit-file-upload-button {
+    width: 180px;
+    height: 45px;
+    border: solid 1px white;
+    border-radius: 100px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;    
+    color: #019df8;  
+    background-color: white;
+    outline: none;
+
+    transition: 0.5s;
+}
+
+.inputFile::-webkit-file-upload-button:hover{
+    border: solid 1.5px #019df8; 
+}
+
+.selectLanguage{
+    width: 35%;
+    height: 53px;
+    margin-top: 10px; 
+    margin-left: 12px;
+    border: solid 1px  white;
+    border-radius: 100px;
+    padding-left: 10px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif; 
+    color: white;  
+    background-color: transparent;
+
+    outline: none;
+    transition: 0.5s;
+}
+
+.selectLanguage:hover{
+    color: #019df8;  
+    background-color: white;
+    transform: scale(1.07);
+}
+
+.buttonSubmit{
+    width: 180px;
+    height: 55px;
+    float: right;
+    margin-right: 5px; 
+    margin-top: 15px; 
+    border: solid 1.5px rgb(240, 240, 240);
+    border-radius: 100px;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;    
+    color: #019df8;  
+    background-color: white;
+    outline: none;
+
+    transition: 0.5s;
+}
+
+.buttonSubmit:hover{
+    border: solid 1.5px rgb(240, 240, 240);
+    color:white;  
+    background-color: transparent;
+
+    transform: scale(1.07);
+}

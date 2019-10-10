@@ -6,12 +6,9 @@ export default function UploadForm(props) {
 
   return (
     <form onSubmit={props.getFormData} encType="multipart/formdata">
-        <label>Title</label>
-        <input type="text" name="title"/>
-        <label>File</label>
-        <input type="file" name="file" id="file"/>
-        <label htmlFor="">Language</label>
-        <select name="language">
+        <input type="text" name="title" placeholder="Nome do arquivo" className="inputTitle"/><br></br>
+        <input type="file" name="file" className="inputFile"/>
+        <select name="language" className="selectLanguage">
           <option name="en-US">en-US</option>
           <option name="es-US">es-US</option>
           <option name="en-AU">en-AU</option>
@@ -28,8 +25,8 @@ export default function UploadForm(props) {
           <option name="ar-SA">ar-SA</option>
           <option name="ru-RU">ru-RU</option>
           <option name="zh-CN">zh-CN</option>
-        </select>
-        <input type="submit"/>
+        </select><br></br>
+        <input type="submit" className="buttonSubmit"/>
       </form>
   );
 }

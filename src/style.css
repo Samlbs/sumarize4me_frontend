@@ -1,0 +1,104 @@
+html, body, #root{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+    padding: 0px;
+	background-image: linear-gradient(to right, rgb(1, 157, 248) , rgb(10, 199, 119));
+}
+
+.bgwhite{
+    background-color: white;
+}
+
+h1{ margin: 0px; padding: 0px; font-family: 'Montserrat', sans-serif;}
+h4{	margin: 0px; padding: 0px; font-family: 'Dosis', sans-serif;}
+
+.container{
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.col-center-1{
+    width: 180vh;
+    height: 100vh;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.col-center-2{
+    width: 100%;
+    height: 100vh;
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*Estilisa o conteudo da aplicação do topo*/
+.contentTop{
+	width: 100vh;
+}
+
+/*Tudo sobre a logo*/
+
+.logo{
+	width: 100%;
+	height: 13vh;
+	display: flex;
+	justify-content: center;
+    align-items: center;    
+}
+
+.logo img{
+	max-width: 280px;
+	width: auto;
+	height: auto;
+}
+
+/*Titulo do topo da plataforma*/
+
+.previewTitle{
+    width: 100%;
+    margin-top: 15px;
+}
+.previewTitle h1{
+	width: 100%;
+	padding-top: 15px;
+	text-align: center;
+	font-size: 30px;
+	color: rgb(240, 240, 240);  
+}
+
+.previewTitle h4{
+	width: 100%;
+	margin-top: 5px;
+	text-align: center;
+	font-size: 35px;
+	color: rgb(240, 240, 240);
+}
+
+.previewTitle hr{
+	width: 10%;
+	height: 4px;	
+	margin-top: 5px;
+	margin-bottom: 15px;
+	border: solid 0px white;
+	border-radius: 20px;
+    background-image: linear-gradient(to right, white, #ffffffa9);
+	font-size: 25px;
+	text-align: center;
+}
+
+.formUpload{
+    width: 100%;
+    height: 30vh;
+    margin-top: 50px;
+}
+
+.contentTable{
+    width: 150vh;
+    margin-top: 50px;
+}
