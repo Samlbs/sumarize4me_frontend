@@ -7,7 +7,7 @@ export default function UploadForm(props) {
   return (
     <form onSubmit={props.getFormData} encType="multipart/formdata">
         <input type="text" name="title" placeholder="Nome do arquivo" className="inputTitle"/><br></br>
-        <input type="file" name="file" className="inputFile"/>
+        <input type="file" name="file" id="file" className="inputFile"/>
         <select name="language" className="selectLanguage">
           <option name="en-US">en-US</option>
           <option name="es-US">es-US</option>

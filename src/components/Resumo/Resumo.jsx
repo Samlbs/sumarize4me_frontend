@@ -126,14 +126,17 @@ export default class components extends Component {
             </div>
             <div className="buttonResume">
                 {this.state.status === 'Complete' &&
-                    <Popup className="popup"
+                    <Popup
                         trigger={<button className="button"> Abrir Resumo </button>}
                         modal
+                        overlayStyle={{ background: "#eee"}}
+                        contentStyle={{ width: "70%", height: "80%", display:"flex", justifyContent:"center", alignItems:"center", padding: "20px", backgroundColor: "white"}}
+                        
                         closeOnDocumentClick
                 
                     >
                         <div className="containerPopUp">
-                            <button onClick={() => this.readOutLoud(this.state.content)}>Voice App</button>
+                            <button className="buttonRead" onClick={() => this.readOutLoud(this.state.content)}>Voice App</button>
                             {this.state.content.map(topic => (
                                 <p key={uniqueId()}>
                                         {

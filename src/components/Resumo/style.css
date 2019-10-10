@@ -56,12 +56,43 @@
 }
 
 .containerPopUp{
-    height: 500px;
-    background-color: red;
+    width: 89%;
+    height: 80%;
+    background-color: white;
     overflow-y: scroll;
     overflow-x: hidden;
+
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;    
+    color: rgb(29, 29, 29); 
 }
 
-.popup{
-    background-color: blue;
+.AverageWeight {
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.AverageWeight:hover{
+    font-size: 16px;
+    color: rgb(0, 0, 0); 
+}
+
+.containerPopUp .buttonRead{
+    width: 150px;
+    height: 45px;
+    margin-left: 10px;
+    border: solid 1px white;
+    border-radius: 100px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;    
+    color: white;  
+    background-image: linear-gradient(to right, rgb(1, 157, 248) , rgb(10, 199, 119));
+    outline: none;
+
+    transition: 0.5s;
+}
+
+.containerPopUp .buttonRead:hover{
+    background-image: linear-gradient(to right, rgb(10, 199, 119), rgb(1, 157, 248));
+    transform: scale(1.07);
 }
